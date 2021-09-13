@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-for h in 0.906 0.907 0.908 0.909 0.91 0.911 0.912 0.913 0.914 0.915
+for h in 0.885 0.886 0.887 0.888 0.889 0.89 0.891 0.892 0.893 0.894 0.895 0.896 0.897 0.898 0.899 0.9 0.901 0.902 0.903 0.904 0.905 0.906 0.907 0.908 0.909 0.91 0.911 0.912 0.913 0.914 0.915
 
 do
 
@@ -18,6 +18,8 @@ scp ../../../../../../../../Desktop/BMN_Web/Nc16_24_mu0.5_Tc/t$h/Results/*.png .
 cd ..
 
 scp ../../Nc16_24_mu0.5/t0.9/index.html ./
+sed -i "s/^<title>BMN_Bosonic_Gauged.*/<title>BMN_Bosonic_Gauged\/Nc16_24_mu0.5(around\ Tc)\/t$h<\/title>/" index.html
+sed -i "s/^<h1>BMN_Bosonic_Gauged.*/<h1>BMN_Bosonic_Gauged\/Nc16_24_mu0.5(around\ Tc)\/t$h<\/h1>/" index.html
 
 cd ..
 
