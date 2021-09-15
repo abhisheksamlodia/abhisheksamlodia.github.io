@@ -9,8 +9,8 @@ do
 	cp ../Nc8_24_mu2/t0.8/index.html ./t$temp/
 	sed -ie "s/^<title>BMN_Bosonic_Gauged\/Nc8_24_mu2.0\/t0.8<\/title>.*/<title>BMN_Bosonic_Gauged\/Nc16_24_mu1.0\/t$temp<\/title>/" t$temp/index.html
 	sed -ie "s/^<h1>BMN_Bosonic_Gauged\/Nc8_24_mu2.0\/t0.8<\/h1>.*/<h1>BMN_Bosonic_Gauged\/Nc16_24_mu1.0\/t$temp<\/h1>/" t$temp/index.html
-	cp ~/Documents/projects/bosonic_matrix_models/data/1.0/L24N16/$temp/Output_Files/Results/*.png ./t$temp/Results/
+	cp /Users/abhishek/Desktop/BMN_Results_Bosonic_paper/runs/1.0/L24N16/$temp/Output_Files/Results/*.png ./t$temp/Results/
 
 done
 
-cp ~/Documents/projects/bosonic_matrix_models/data/1.0/L24N16/Temperature_Plots/*.png ./Obs/Results/
+cp /Users/abhishek/Desktop/BMN_Results_Bosonic_paper/runs/1.0/L24N16/Temperature_Plots/*.png ./Obs/Results/
