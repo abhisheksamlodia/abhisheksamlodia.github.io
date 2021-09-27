@@ -13,7 +13,7 @@ mkdir Results
 
 cd Results
 
-scp ../../../../../../../../Desktop/BMN_Web/Nc16_24_mu0.5_Tc/t$h/Results/*.png ./
+scp ../../../../../../../../Desktop/BMN_Web/Nc16_24_mu0.5/t$h/Results/*.png ./
 
 cd ..
 
@@ -30,7 +30,7 @@ cd Obs
 
 cd Results
 
-scp ../../../../../../../../Desktop/BMN_Web/Nc16_24_mu0.5_Tc/*.png ./
+scp ../../../../../../../../Desktop/BMN_Web/Nc16_24_mu0.5/*.png ./
 
 cd ..
 
