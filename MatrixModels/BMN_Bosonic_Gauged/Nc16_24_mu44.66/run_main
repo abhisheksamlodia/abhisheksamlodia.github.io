@@ -1,0 +1,41 @@
+#!/bin/bash
+
+
+for h in 3.9 3.925 3.95 3.975 3.99 4.0 4.01 4.025 4.05 4.075 4.1 4.15
+
+do
+
+mkdir t$h
+
+cd t$h
+
+mkdir Results
+
+cd Results
+
+scp ../../../../../../../../Desktop/BMN_Web/Nc16_24_mu44.66/t$h/Results/*.png ./
+
+cd ..
+
+scp ../../Nc16_24_mu0.5/t0.9/index.html ./
+sed -i "s/^<title>BMN_Bosonic_Gauged.*/<title>BMN_Bosonic_Gauged\/Nc16_24_mu44.66\/t$h<\/title>/" index.html
+sed -i "s/^<h1>BMN_Bosonic_Gauged.*/<h1>BMN_Bosonic_Gauged\/Nc16_24_mu44.66\/t$h<\/h1>/" index.html
+
+cd ..
+
+
+done 
+
+cd Obs 
+
+cd Results
+
+scp ../../../../../../../../Desktop/BMN_Web/Nc16_24_mu44.66/*.png ./
+
+cd ..
+
+cd ..
+
+wait 
+
+echo Done
