@@ -1,0 +1,41 @@
+#!/bin/bash
+
+
+for h in 0.896 0.898 0.899 0.9 0.901 0.902 0.903 0.904 0.906
+
+do
+
+mkdir t$h
+
+cd t$h
+
+mkdir Results
+
+cd Results
+
+scp ../../../../../../../../Desktop/BMN_Web/Nc48_24_mu1.0/t$h/Results/*.png ./
+
+cd ..
+
+scp ../../Nc16_24_mu0.5/t0.9/index.html ./
+sed -i "s/^<title>BMN_Bosonic_Gauged.*/<title>BMN_Bosonic_Gauged\/Nc48_24_mu1.0\/t$h<\/title>/" index.html
+sed -i "s/^<h1>BMN_Bosonic_Gauged.*/<h1>BMN_Bosonic_Gauged\/Nc48_24_mu1.0\/t$h<\/h1>/" index.html
+
+cd ..
+
+
+done 
+
+cd Obs 
+
+cd Results
+
+scp ../../../../../../../../Desktop/BMN_Web/Nc48_24_mu1.0/*.png ./
+
+cd ..
+
+cd ..
+
+wait 
+
+echo Done
