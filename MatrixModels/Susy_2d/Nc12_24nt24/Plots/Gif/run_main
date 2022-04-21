@@ -1,0 +1,19 @@
+#!/bin/bash
+
+
+for rt in 0.333 0.5 0.75 1.0 2.0 3.0
+
+do
+
+for g in 0.30 0.40 0.50
+
+do
+
+scp /home/user/Desktop/SUSY_2D-BOUND/susy_bound_results/Nc12_24nt24/rt$rt\_g$g/Results/*.gif ./
+
+
+done 
+
+done
+
+echo Done
