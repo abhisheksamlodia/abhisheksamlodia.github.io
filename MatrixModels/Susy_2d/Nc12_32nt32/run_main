@@ -1,0 +1,34 @@
+#!/bin/bash
+
+
+for rt in 1.0 3.0 5.0 7.0
+
+do
+
+for g in 0.30 0.40 0.50
+
+do
+
+cd rt$rt\_g$g
+scp ../index.html ./
+cd Results
+
+scp /home/user/Desktop/SUSY_2D-BOUND/susy_bound_results/Nc12_32nt32/rt$rt\_g$g/Results/*.png ./
+
+
+
+cd ..
+
+sed -i -e "s/rt0.5\_g0.30/rt$rt\_g$g/g" index.html
+
+cd ..
+
+done 
+
+done
+
+cd Plots
+
+scp /home/user/Desktop/SUSY_2D-BOUND/susy_bound_results/Nc12_32nt32/*.pdf ./
+
+echo Done
