@@ -1,11 +1,11 @@
 #!/bin/bash
 
 
-for rt in 0.5
+for rt in 0.333 0.5 0.75 1.0 2.0 3.0 5.0 7.0
 
 do
 
-for g in 0.20
+for g in 0.30 0.40 0.50
 
 do
 
@@ -13,7 +13,7 @@ rm -r rt$rt\_g$g
 mkdir rt$rt\_g$g
 cd rt$rt\_g$g
 scp ../index.html ./
-rm -r Results
+#rm -r Results
 mkdir Results
 cd Results
 
@@ -30,6 +30,36 @@ cd ..
 done 
 
 done
+
+for rt in 0.5 0.75 1.0 2.0
+
+do
+
+for g in 0.10 0.20
+
+do
+
+rm -r rt$rt\_g$g
+mkdir rt$rt\_g$g
+cd rt$rt\_g$g
+scp ../index.html ./
+#rm -r Results
+mkdir Results
+cd Results
+
+scp /home/user/Desktop/SUSY_2D-BOUND/susy_bound_results/Nc12_24nt24/rt$rt\_g$g/Results/*.png ./
+
+cd ..
+
+sed -i -e "s/rt0.5\_g0.30/rt$rt\_g$g/g" index.html
+
+cd ..
+
+done
+
+done
+
+
 
 cd Plots
 
