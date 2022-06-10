@@ -1,9 +1,0 @@
-#!/bin/bash
-
-gnuplot up_loop.p
-epstopdf up_loop.eps
-gnuplot usw_lines.p
-epstopdf usw_lines.eps
-gnuplot chi_w.p
-epstopdf chi_w.eps
-
