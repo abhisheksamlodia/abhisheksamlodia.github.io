@@ -24,7 +24,7 @@ scp /home/user/Desktop/SUSY_2D-BOUND/susy_bound_results/Nc16_12nt12/rt$rt\_g$g/R
 cd ..
 
 sed -i -e "s/rt0.5\_g0.30/rt$rt\_g$g/g" index.html
-sed -i -e "s/Nc\_12\_24nt24/Nc\_16\_12nt12/g" index.html
+sed -i -e "s/Nc12\_24nt24/Nc16\_12nt12/g" index.html
 
 cd ..
 
