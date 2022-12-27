@@ -1,0 +1,27 @@
+#!/bin/bash
+
+
+for rt in 0.1 0.15 0.175 0.2 0.225 0.25 0.275 0.3
+
+do
+
+for g in 0.60
+
+do
+
+rm -r rt$rt\_g$g
+mkdir rt$rt\_g$g
+cd rt$rt\_g$g
+
+scp /home/hp/Desktop/Nc12_18nt8/rt$rt\_g$g/index.html ./
+scp -r /home/hp/Desktop/Nc12_18nt8/rt$rt\_g$g/data ./
+
+
+cd ..
+
+
+done 
+
+done
+
+echo Done
