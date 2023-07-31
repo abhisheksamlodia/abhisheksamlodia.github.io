@@ -1,2 +1,2 @@
 # Description
-This is the code for personal website of Abhishek Samlodia
+Personal Website of Abhishek Samlodia
