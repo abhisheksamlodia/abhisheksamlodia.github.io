@@ -5,78 +5,245 @@
     <meta name="viewport" content="width=device-width, initial-scale=1.0">
     <title>Abhishek Samlodia</title>
     <style>
-        body {
-            font-family: 'Arial', sans-serif;
+        * {
             margin: 0;
             padding: 0;
-            background-color: #f4f4f4;
-            color: #333;
+            box-sizing: border-box;
+        }
+
+        body {
+            font-family: 'Segoe UI', Tahoma, Geneva, Verdana, sans-serif;
+            background: linear-gradient(135deg, #0a0e27 0%, #1a1f3a 50%, #0f1729 100%);
+            color: #e0e6ed;
+            line-height: 1.6;
+            min-height: 100vh;
+            position: relative;
+            overflow-x: hidden;
+        }
+
+        /* Animated background particles */
+        body::before {
+            content: '';
+            position: fixed;
+            top: 0;
+            left: 0;
+            width: 100%;
+            height: 100%;
+            background-image: 
+                radial-gradient(2px 2px at 20% 30%, rgba(100, 200, 255, 0.3), transparent),
+                radial-gradient(2px 2px at 60% 70%, rgba(150, 100, 255, 0.3), transparent),
+                radial-gradient(1px 1px at 50% 50%, rgba(200, 150, 255, 0.3), transparent),
+                radial-gradient(1px 1px at 80% 10%, rgba(100, 150, 255, 0.3), transparent),
+                radial-gradient(2px 2px at 90% 60%, rgba(150, 200, 255, 0.3), transparent),
+                radial-gradient(1px 1px at 33% 80%, rgba(100, 180, 255, 0.3), transparent);
+            background-size: 200% 200%;
+            animation: particle-float 20s ease-in-out infinite;
+            pointer-events: none;
+            z-index: 0;
+        }
+
+        @keyframes particle-float {
+            0%, 100% { background-position: 0% 0%; }
+            50% { background-position: 100% 100%; }
         }
 
         header {
-            background-color: #007bff;
+            background: linear-gradient(135deg, rgba(30, 40, 80, 0.95) 0%, rgba(20, 30, 60, 0.95) 100%);
+            backdrop-filter: blur(10px);
             color: white;
-            padding: 40px 20px;
+            padding: 60px 20px;
             text-align: center;
+            border-bottom: 2px solid rgba(100, 150, 255, 0.3);
+            box-shadow: 0 4px 30px rgba(0, 0, 0, 0.5);
+            position: relative;
+            z-index: 1;
+        }
+
+        header h1 {
+            font-size: 3em;
+            font-weight: 300;
+            letter-spacing: 3px;
+            margin-bottom: 10px;
+            background: linear-gradient(135deg, #64b5f6 0%, #9575cd 100%);
+            -webkit-background-clip: text;
+            -webkit-text-fill-color: transparent;
+            background-clip: text;
+        }
+
+        header p {
+            font-size: 1.2em;
+            color: #b0bec5;
+            font-weight: 300;
+            margin-bottom: 30px;
         }
 
         header nav {
-            margin-top: 20px;
             display: flex;
             flex-wrap: wrap;
             justify-content: center;
-            gap: 15px;
+            gap: 10px;
+            margin-top: 30px;
         }
 
         nav a {
-            color: Black;
+            color: #64b5f6;
             text-decoration: none;
-            font-weight: bold;
-            padding: 12px 24px;
-            border-radius: 5px;
+            font-weight: 500;
+            padding: 12px 28px;
+            border-radius: 25px;
+            background: rgba(100, 150, 255, 0.1);
+            border: 1px solid rgba(100, 150, 255, 0.3);
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
         }
 
         nav a:hover {
-            background-color: rgba(255, 255, 255, 0.3);
+            background: rgba(100, 150, 255, 0.25);
+            border-color: rgba(100, 150, 255, 0.6);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(100, 150, 255, 0.4);
         }
 
         main {
-            max-width: 900px;
-            margin: 20px auto;
+            max-width: 1000px;
+            margin: 40px auto;
             padding: 20px;
-            background-color: white;
-            border-radius: 8px;
-            box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+            position: relative;
+            z-index: 1;
         }
 
         section {
-            margin-bottom: 40px;
+            background: rgba(25, 35, 60, 0.7);
+            backdrop-filter: blur(10px);
+            margin-bottom: 30px;
+            padding: 40px;
+            border-radius: 15px;
+            border: 1px solid rgba(100, 150, 255, 0.2);
+            box-shadow: 0 8px 32px rgba(0, 0, 0, 0.3);
+            transition: transform 0.3s ease, box-shadow 0.3s ease;
+        }
+
+        section:hover {
+            transform: translateY(-5px);
+            box-shadow: 0 12px 40px rgba(100, 150, 255, 0.2);
         }
 
         h2 {
-            color: #007bff;
-            border-bottom: 2px solid #e0e0e0;
-            padding-bottom: 10px;
+            color: #64b5f6;
+            font-size: 2em;
+            font-weight: 300;
+            border-bottom: 2px solid rgba(100, 150, 255, 0.3);
+            padding-bottom: 15px;
+            margin-bottom: 25px;
+            letter-spacing: 1px;
+        }
+
+        h3 {
+            color: #9575cd;
+            font-size: 1.5em;
+            font-weight: 400;
+            margin-top: 25px;
+            margin-bottom: 15px;
+        }
+
+        p {
+            margin-bottom: 15px;
+            color: #cfd8dc;
+        }
+
+        ul {
+            list-style: none;
+            padding-left: 0;
+        }
+
+        ul li {
+            padding: 12px 0;
+            padding-left: 30px;
+            position: relative;
+            color: #cfd8dc;
+            transition: color 0.3s ease;
+        }
+
+        ul li::before {
+            content: '▹';
+            position: absolute;
+            left: 0;
+            color: #64b5f6;
+            font-size: 1.5em;
+            line-height: 1.2;
+        }
+
+        ul li:hover {
+            color: #fff;
+        }
+
+        ul li strong {
+            color: #9575cd;
         }
 
         .skills {
             display: flex;
             flex-wrap: wrap;
+            gap: 12px;
+            margin-top: 20px;
         }
 
         .skill {
-            background-color: #007bff;
-            color: white;
-            padding: 10px;
-            margin: 5px;
-            border-radius: 5px;
+            background: linear-gradient(135deg, rgba(100, 150, 255, 0.2) 0%, rgba(150, 100, 255, 0.2) 100%);
+            color: #64b5f6;
+            padding: 10px 20px;
+            border-radius: 20px;
+            border: 1px solid rgba(100, 150, 255, 0.4);
+            font-weight: 500;
+            transition: all 0.3s ease;
+            backdrop-filter: blur(5px);
+        }
+
+        .skill:hover {
+            background: linear-gradient(135deg, rgba(100, 150, 255, 0.3) 0%, rgba(150, 100, 255, 0.3) 100%);
+            transform: translateY(-2px);
+            box-shadow: 0 4px 15px rgba(100, 150, 255, 0.3);
+        }
+
+        .skill a {
+            text-decoration: none;
+            color: inherit;
+        }
+
+        #contact a {
+            color: #64b5f6;
+            text-decoration: none;
+            transition: color 0.3s ease;
+        }
+
+        #contact a:hover {
+            color: #9575cd;
         }
 
         footer {
             text-align: center;
-            padding: 20px;
+            padding: 30px 20px;
             font-size: 0.9em;
-            color: #6c757d;
+            color: #78909c;
+            position: relative;
+            z-index: 1;
+            background: rgba(10, 14, 39, 0.8);
+            backdrop-filter: blur(10px);
+            border-top: 1px solid rgba(100, 150, 255, 0.2);
+        }
+
+        @media (max-width: 768px) {
+            header h1 {
+                font-size: 2em;
+            }
+
+            section {
+                padding: 25px;
+            }
+
+            h2 {
+                font-size: 1.5em;
+            }
         }
     </style>
 </head>
@@ -100,7 +267,7 @@
         <p>
             I am a fourth year graduate student at Syracuse University, New York, USA. I am interested in theoretical and computational 
             physics specifically high energy theory, condensed matter theory and qubit device theory. My research focuses on Lattice Field Theory,
-	    Tensor Networks, Quantum Computation, Qubit Device Theory, High Performance Computing, Machine Learning and Open Source Software Development.
+            Tensor Networks, Quantum Computation, Qubit Device Theory, High Performance Computing, Machine Learning and Open Source Software Development.
         </p>
     </section>
 
@@ -112,7 +279,7 @@
             <li><strong>Lattice QCD</strong> - Hadron spectroscopy analysis.</li>
             <li><strong>Anomalies</strong> - Symmetric Mass Generation studies using lattice field theory formalism.</li>
             <li><strong>Quantum Computation</strong> - Quantum simulations of lattice gauge theories and discrete spin models.</li>
-	    <li><strong>Quantum Device Theory</strong> - Theoretical modelling for industrial and research based multi-qubit quantum chips.</li>
+            <li><strong>Quantum Device Theory</strong> - Theoretical modelling for industrial and research based multi-qubit quantum chips.</li>
         </ul>
     </section>
 
@@ -139,14 +306,14 @@
     <section id="teaching">
         <h2>Teaching</h2>
         <div class="skills">
-	    <div class="skill">PHY567</div>
-	    <div class="skill">PHY524</div>
+            <div class="skill">PHY567</div>
+            <div class="skill">PHY524</div>
             <div class="skill">PHY221</div>
             <div class="skill">PHY663</div>
         </div>
-        <p>
-	    <strong>PHY567</strong> - Undergraduate (senior level) Quantum Mechanics Course <br/>
-	    <strong>PHY524</strong> - Undergraduate (senior level) Electromagnetics Course <br/>
+        <p style="margin-top: 20px;">
+            <strong>PHY567</strong> - Undergraduate (senior level) Quantum Mechanics Course <br/>
+            <strong>PHY524</strong> - Undergraduate (senior level) Electromagnetics Course <br/>
             <strong>PHY221</strong> - Undergraduate (freshmen level) Mechanics Lab Course <br/>
             <strong>PHY663</strong> - Graduate Qualifier Exam Preparation Course
         </p>
@@ -158,12 +325,12 @@
             You can reach me at <a href="mailto:asamlodia@gmail.com">asamlodia@gmail.com</a><br/>
         </p>
         <div class="skills">
-            <div class="skill"><a href="https://inspirehep.net/authors/2015379?ui-citation-summary=true", style="text-decoration:none; color:white">iNSPIRE-HEP</a></div>
-            <div class="skill"><a href="https://scholar.google.com/citations?user=lZmJlRgAAAAJ&hl=en", style="text-decoration:none; color:white">Google-Scholar</a></div>
-            <div class="skill"><a href="https://orcid.org/0000-0003-4802-1356", style="text-decoration:none; color:white">ORCID</a></div>
-            <div class="skill"><a href="https://www.researchgate.net/profile/Abhishek_Samlodia", style="text-decoration:none; color:white">ResearchGate</a></div>
-            <div class="skill"><a href="https://github.com/abhisheksamlodia", style="text-decoration:none; color:white">GitHub</a></div>
-            <div class="skill"><a href="www.linkedin.com/in/abhishek-samlodia-83b512210", style="text-decoration:none; color:white">LinkedIn</a></div>
+            <div class="skill"><a href="https://inspirehep.net/authors/2015379?ui-citation-summary=true">iNSPIRE-HEP</a></div>
+            <div class="skill"><a href="https://scholar.google.com/citations?user=lZmJlRgAAAAJ&hl=en">Google-Scholar</a></div>
+            <div class="skill"><a href="https://orcid.org/0000-0003-4802-1356">ORCID</a></div>
+            <div class="skill"><a href="https://www.researchgate.net/profile/Abhishek_Samlodia">ResearchGate</a></div>
+            <div class="skill"><a href="https://github.com/abhisheksamlodia">GitHub</a></div>
+            <div class="skill"><a href="https://www.linkedin.com/in/abhishek-samlodia-83b512210">LinkedIn</a></div>
         </div>
     </section>
 </main>
